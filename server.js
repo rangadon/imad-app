@@ -15,6 +15,9 @@ app.get('/artical-two',function(req,res)
 {
    res.get('Artical two is requested plz wait'); 
 });
+app.get('/artical-three',function(req,res){
+   res.send('Artical three requested in served plz wait'); 
+});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
