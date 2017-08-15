@@ -8,7 +8,13 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+app.get('/artical-one',function(req,res){
+   res.send('Artical one requested in served plz wait'); 
+});
+app.get('/artical-two',function(req,res)
+{
+   res.get('Artical two is requested plz wait'); 
+});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
