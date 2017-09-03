@@ -5,21 +5,43 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articalone= {
-  title:'Artical one i am sarang',
-  heading:'Artical one',
-  date:'15 aug 2017',
-  content:   `<p>
-                   This is my first web page   This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page 
-                </p>
-                
-                <p>
-                   This is my first web page   This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page 
-                </p>
-                
-                <p>
-                   This is my first web page   This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page 
-                </p> `
+
+
+var articles=  {
+    'artical-one'  : {
+          title:'Artical one i am sarang',
+          heading:'Artical one',
+          date:'15 aug 2017',
+          content:   `<p>
+                           This is my first web page   This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page 
+                        </p>
+                        
+                        <p>
+                           This is my first web page   This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page 
+                        </p>
+                        
+                        <p>
+                           This is my first web page   This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page  This is my first web page 
+                        </p> `
+},
+   'artical-two' :{
+        title:'Artical two i am sarang',
+          heading:'Artical two',
+          date:'10 aug 2017',
+          content:   ` <p>
+                           This is my second web page   
+                        </p> `
+                        
+                       
+   },
+   'artical-three' : {
+        title:'Artical three i am sarang',
+          heading:'Artical three',
+          date:'17 aug 2017',
+          content:   ` <p>
+                           This is my second web page   
+                        </p> `
+   }
 };
 
 function createTemplate(data){
@@ -74,16 +96,15 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/artical-one',function(req,res){
-   res.send(createTemplate(articalone));
+app.get('/:articlename',function(req,res){
+    //ariclename==artical-one
+    //articals[articlename]=={} content object of artical one
+    
+    var articlename=req.parans.articlename;
+    res.send(createTemplate(articals[articlename]));
 });
-app.get('/artical-two',function(req,res)
-{
-   res.sendFile(path.join(__dirname, 'ui', 'artical-two.html'));
-});
-app.get('/artical-three',function(req,res){
-res.sendFile(path.join(__dirname, 'ui', 'artical-three.html'));
-});
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
