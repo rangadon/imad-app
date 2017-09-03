@@ -96,12 +96,12 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/:articlename',function(req,res){
+app.get('/:articleName',function(req,res){
     //ariclename==artical-one
     //articals[articlename]=={} content object of artical one
     
-    var articlename=req.param.articlename;
-    res.send(createTemplate(articals[articlename]));
+    var articleName=req.param.articleName;
+    res.send(createTemplate(articals[articleName]));
 });
 
 
