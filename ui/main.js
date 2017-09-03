@@ -1,21 +1,14 @@
-console.log('Loaded!');
-
-
-
-//change the text of the main-text
-
-
-
-//Move the Image
-var img=document.getElementById('madi');
-var marginLeft=0;
-function moveRight()
+//console code
+var counter=0;
+var button=document.getElementById("counter");
+button.onclick=function()
 {
-    marginLeft=marginLeft+1;
-    img.style.marginLeft=marginLeft+'px';
-}
-img.onclick=function()
-{
-    var interval=setInterval(moveRight,50);
-   
+    //make a counter request to the counter end point
+    
+    //capture the responece and store it in a variable
+    
+    //rendaring a variable in correct spam
+    counter=counter+1;
+    var span=document.getElementById('count');
+    span.innerHTML=counter.toString();
 };
