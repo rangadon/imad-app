@@ -57,7 +57,7 @@ submit.onclick=function()
         //not done yet
     };
    //make the request
-   request.open('GET','http://sarangchandak21.imad.hasura-app.io/submit-name?name='+name,true);
+   request.open('GET','http://sarangchandak21.imad.hasura-app.io/submit-name?name='+ name,true);
    request.send(null);
   
   
