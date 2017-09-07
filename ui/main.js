@@ -41,7 +41,7 @@ submit.onclick=function()
             //Take some action
             if(request.status===200)
             {
-              var names=request.responceText;
+              var names=request.responseText;
               names=JSON.parse(names);
                   var list='';
                   for(i=0;i<names.length;i++)
@@ -57,7 +57,7 @@ submit.onclick=function()
     };
    //make the request
    var nameInput=document.getElementById('name');
-var name= nameInput.value;
+    var name= nameInput.value;
    request.open('GET','http://sarangchandak21.imad.hasura-app.io/submit-name?name='+ name,true);
    request.send(null);
   
