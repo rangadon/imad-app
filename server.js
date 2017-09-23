@@ -128,7 +128,7 @@ app.get('/create-user',function(req,res) {
     var password=req.body.password;
    
    
-   var salt= crypto.getRandomBytes(128).toString('Hex');
+   var salt= crypto.randomBytes(128).toString('Hex');
    var dbString = hash(password,salt);
    pool.query('insert into "user" (username,password) values($1,$2)', [username,dbString], function(err,result){
      
