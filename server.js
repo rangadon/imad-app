@@ -114,7 +114,7 @@ function hash(input,salt) {
     return hashed.toString('Hex');
 }
 
-app.get('/hash/:input', function(req,res))  {
+app.get('/hash/:input', function(req,res) {
    var hashedString=hash(req.params.input,'This is some randome string');
    res.send(hashedString);
 });
@@ -122,7 +122,7 @@ app.get('/hash/:input', function(req,res))  {
 
 
   var pool=new Pool(config);
-  app.get('/test-db', function (req, res)   {
+  app.get('/test-db', function (req,res)   {
       
   
   //make a select statement
